@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Собрать ланч</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="lunch.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+  <h1>Бизнес-ланчи</h1>
+  <nav>
+    <a href="index.html">Главная</a>
+    <a href="lunch.html" class="active">Меню</a>
+    <a href="#footer">Контакты</a>
+    <div class="auth-buttons">
+      <button id="loginBtn">Вход</button>
+      <button id="registerBtn">Регистрация</button>
+    </div>
+  </nav>
+</header>
+<main>
+  <section>
+    <h2>Супы</h2>
+    <div class="dishes-grid">
+      <div class="dish-card">
+        <img src="https://i0.wp.com/lytchalet.ru/wp-content/uploads/2019/03/60228.jpg?fit=800%2C576&ssl=1" alt="Суп">
+        <p class="dish-price">150 руб.</p>
+        <p class="dish-name">Суп-пюре из брокколи</p>
+        <p class="dish-weight">300 г</p>
+        <button class="add-button">Добавить</button>
+      </div>
+      <div class="dish-card">
+        <img src="https://primebeef.ru/images/cms/data/3-501.jpg" alt="Суп">
+        <p class="dish-price">120 руб.</p>
+        <p class="dish-name">Борщ</p>
+        <p class="dish-weight">300 г</p>
+        <button class="add-button">Добавить</button>
+      </div>
+      <div class="dish-card">
+        <img src="https://static.1000.menu/img/content-v2/c9/a7/13276/sup-s-frikadelkami-i-vermishelu_1613901772_14_max.jpg" alt="Суп">
+        <p class="dish-price">130 руб.</p>
+        <p class="dish-name">Суп с фрикадельками</p>
+        <p class="dish-weight">300 г</p>
+        <button class="add-button">Добавить</button>
+      </div>
+    </div>
+  </section>
+  <section>
+    <h2>Главные блюда</h2>
+    <div class="dishes-grid">
+      <div class="dish-card">
+        <img src="https://img.iamcook.ru/2023/upl/recipes/cat/u-8deb4ab44b2e85dac565153c3f6a078b.jpg" alt="Главное блюдо">
+        <p class="dish-price">300 руб.</p>
+        <p class="dish-name">Курица с рисом</p>
+        <p class="dish-weight">400 г</p>
+        <button class="add-button">Добавить</button>
+      </div>
+      <div class="dish-card">
+        <img src="https://eda.ru/images/RecipePhoto/390x390/spagetti-karbonara-s-bekonom_15630_photo_905.jpg" alt="Главное блюдо">
+        <p class="dish-price">280 руб.</p>
+        <p class="dish-name">Паста Карбонара</p>
+        <p class="dish-weight">350 г</p>
+        <button class="add-button">Добавить</button>
+      </div>
+      <div class="dish-card">
+        <img src="https://static.1000.menu/img/content/33781/steik-iz-lososya-v-duxovke_1554118185_6_max.jpg" alt="Главное блюдо">
+        <p class="dish-price">320 руб.</p>
+        <p class="dish-name">Стейк из лосося</p>
+        <p class="dish-weight">250 г</p>
+        <button class="add-button">Добавить</button>
+      </div>
+    </div>
+  </section>
+  <section>
+    <h2>Напитки</h2>
+    <div class="dishes-grid">
+      <div class="dish-card">
+        <img src="https://www.donat.com/wp-content/uploads/2021/11/%D0%A1%D1%82%D0%B0%D0%BA%D0%B0%D0%BD-%D0%B2%D0%BE%D0%B4%D1%8B.jpg" alt="Напиток">
+        <p class="dish-price">50 руб.</p>
+        <p class="dish-name">Вода</p>
+        <p class="dish-weight">330 мл</p>
+        <button class="add-button">Добавить</button>
+      </div>
+      <div class="dish-card">
+        <img src="https://img.freepik.com/free-photo/fresh-orange-juice-glass-dark-background_1150-45557.jpg" alt="Напиток">
+        <p class="dish-price">40 руб.</p>
+        <p class="dish-name">Сок апельсиновый</p>
+        <p class="dish-weight">200 мл</p>
+        <button class="add-button">Добавить</button>
+      </div>
+      <div class="dish-card">
+        <img src="https://artoftea.ru/image/catalog/11blog/aot_article_green.tea.guide_1.jpg" alt="Напиток">
+        <p class="dish-price">60 руб.</p>
+        <p class="dish-name">Чай зеленый</p>
+        <p class="dish-weight">250 мл</p>
+        <button class="add-button">Добавить</button>
+      </div>
+    </div>
+  </section>
+</main>
+<footer id="footer">
+  <p>Контакты: <a href="mailto:info@businesslunch.ru">info@businesslunch.ru</a>, Телефон: <a href="tel:+71234567890">+7 (123) 456-78-90</a></p>
+</footer>
+
+<!-- Модальные окна для форм -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Форма аутентификации</h2>
+    <form action="https://httpbin.org/post" method="post" class="auth-form">
+      <label for="login">Логин:</label>
+      <input type="text" id="login" name="login" required><br><br>
+
+      <label for="password">Пароль:</label>
+      <input type="password" id="password" name="password" required><br><br>
+
+      <input type="checkbox" id="remember" name="remember">
+      <label for="remember">Запомнить меня</label><br><br>
+
+      <input type="submit" value="Войти">
+    </form>
+  </div>
+</div>
+
+<div id="registerModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Форма регистрации</h2>
+    <form action="https://httpbin.org/post" method="post" class="auth-form">
+      <label for="registerName">ФИО:</label>
+      <input type="text" id="registerName" name="registerName" required><br><br>
+
+      <label for="registerEmail">Email:</label>
+      <input type="email" id="registerEmail" name="registerEmail" required><br><br>
+
+      <label for="registerPassword">Пароль:</label>
+      <input type="password" id="registerPassword" name="registerPassword" required><br><br>
+
+      <input type="submit" value="Зарегистрироваться">
+    </form>
+  </div>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>
