@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бизнес-ланчи</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <h1>Бизнес-ланчи</h1>
+    <nav>
+        <a href="#">Главная</a>
+        <a href="#">Меню</a>
+        <a href="#">О нас</a>
+        <a href="#footer">Контакты</a>
+        <div class="auth-buttons">
+            <button id="loginBtn">Вход</button>
+            <button id="registerBtn">Регистрация</button>
+        </div>
+    </nav>
+</header>
+<main>
+    <section>
+        <h2>О компании</h2>
+        <img src="https://img.freepik.com/free-photo/top-view-of-delicious-gourmet-dishes-with-different-vegetables-and-meat_181624-57725.jpg" alt="Компания">
+        <p>Мы доставляем вкусные и свежие бизнес-ланчи по всей Москве. Наши блюда приготовлены из лучших ингредиентов и доставляются прямо к вашему офису.</p>
+    </section>
+    <section>
+        <h2>Преимущества</h2>
+        <ul>
+            <li>Свежие продукты</li>
+            <li>Быстрая доставка</li>
+            <li>Широкий ассортимент блюд</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Популярные блюда</h2>
+        <table>
+            <tr>
+                <th>Блюдо</th>
+                <th>Описание</th>
+                <th>Цена</th>
+            </tr>
+            <tr>
+                <td>Салат Цезарь</td>
+                <td>Свежие листья салата, курица, пармезан, соус Цезарь</td>
+                <td>250 руб.</td>
+            </tr>
+            <tr>
+                <td>Суп-пюре из брокколи</td>
+                <td>Нежный суп из брокколи с сыром</td>
+                <td>150 руб.</td>
+            </tr>
+            <tr>
+                <td>Курица с рисом</td>
+                <td>Сочная курица с ароматным рисом</td>
+                <td>300 руб.</td>
+            </tr>
+            <tr>
+                <td>Паста Карбонара</td>
+                <td>Паста с беконом, яйцом и сыром</td>
+                <td>280 руб.</td>
+            </tr>
+            <tr>
+                <td>Тирамису</td>
+                <td>Классический итальянский десерт</td>
+                <td>180 руб.</td>
+            </tr>
+        </table>
+    </section>
+    <section>
+        <h2>Форма обратной связи</h2>
+        <form action="https://httpbin.org/post" method="post" enctype="multipart/form-data">
+            <label for="name">ФИО:</label>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label>Откуда узнали о нас:</label><br>
+            <input type="radio" id="source1" name="source" value="Интернет">
+            <label for="source1">Интернет</label><br>
+            <input type="radio" id="source2" name="source" value="Реклама">
+            <label for="source2">Реклама</label><br>
+            <input type="radio" id="source3" name="source" value="Друзья">
+            <label for="source3">Друзья</label><br><br>
+
+            <label for="type">Тип обращения:</label>
+            <select id="type" name="type" required>
+                <option value="жалоба">Жалоба</option>
+                <option value="предложение">Предложение</option>
+            </select><br><br>
+
+            <label for="message">Текст сообщения:</label><br>
+            <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+
+            <label for="attachment">Вложения:</label>
+            <input type="file" id="attachment" name="attachment"><br><br>
+
+            <input type="checkbox" id="consent" name="consent" required>
+            <label for="consent">Даю согласие на обработку персональных данных</label><br><br>
+
+            <input type="submit" value="Отправить">
+        </form>
+    </section>
+</main>
+<footer id="footer">
+    <p>Контакты: <a href="mailto:info@businesslunch.ru">info@businesslunch.ru</a>, Телефон: <a href="tel:+71234567890">+7 (123) 456-78-90</a></p>
+</footer>
+
+<!-- Модальные окна для форм -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Форма аутентификации</h2>
+        <form action="https://httpbin.org/post" method="post" class="auth-form">
+            <label for="login">Логин:</label>
+            <input type="text" id="login" name="login" required><br><br>
+
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required><br><br>
+
+            <input type="checkbox" id="remember" name="remember">
+            <label for="remember">Запомнить меня</label><br><br>
+
+            <input type="submit" value="Войти">
+        </form>
+    </div>
+</div>
+
+<div id="registerModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Форма регистрации</h2>
+        <form action="https://httpbin.org/post" method="post" class="auth-form">
+            <label for="registerName">ФИО:</label>
+            <input type="text" id="registerName" name="registerName" required><br><br>
+
+            <label for="registerEmail">Email:</label>
+            <input type="email" id="registerEmail" name="registerEmail" required><br><br>
+
+            <label for="registerPassword">Пароль:</label>
+            <input type="password" id="registerPassword" name="registerPassword" required><br><br>
+
+            <input type="submit" value="Зарегистрироваться">
+        </form>
+    </div>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>
