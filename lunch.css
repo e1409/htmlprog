@@ -77,7 +77,7 @@ section h2 {
 
 .dishes-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 10px;
 }
 
@@ -154,10 +154,6 @@ footer a:hover {
     nav {
         justify-content: space-between;
     }
-
-    .dishes-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
 }
 
 @media (max-width: 600px) {
@@ -172,9 +168,5 @@ footer a:hover {
 
     section h2 {
         text-align: center;
-    }
-
-    .dishes-grid {
-        grid-template-columns: repeat(3, 1fr);
     }
 }
