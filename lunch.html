@@ -101,6 +101,71 @@
     </div>
   </section>
 </main>
+
+<section id="order-form">
+  <h2>Форма заказа</h2>
+  <form action="https://httpbin.org/post" method="post">
+    <div class="order-section">
+      <h3>Ваш заказ</h3>
+      <label for="soup">Суп:</label>
+      <select id="soup" name="soup" required>
+        <option value="">Выберите суп</option>
+        <option value="broccoli">Суп-пюре из брокколи</option>
+        <option value="borscht">Борщ</option>
+        <option value="frikadelle">Суп с фрикадельками</option>
+      </select>
+
+      <label for="main-dish">Главное блюдо:</label>
+      <select id="main-dish" name="main-dish" required>
+        <option value="">Выберите главное блюдо</option>
+        <option value="chicken">Курица с рисом</option>
+        <option value="carbonara">Паста Карбонара</option>
+        <option value="salmon">Стейк из лосося</option>
+      </select>
+
+      <label for="drink">Напиток:</label>
+      <select id="drink" name="drink" required>
+        <option value="">Выберите напиток</option>
+        <option value="water">Вода</option>
+        <option value="orange-juice">Сок апельсиновый</option>
+        <option value="green-tea">Чай зеленый</option>
+      </select>
+
+      <label for="comment">Комментарий:</label>
+      <textarea id="comment" name="comment" rows="4"></textarea>
+    </div>
+
+    <div class="customer-section">
+      <h3>Ваши данные</h3>
+      <label for="name">Имя:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <input type="checkbox" id="subscribe" name="subscribe" checked>
+      <label for="subscribe">Подписаться на рассылку</label>
+
+      <label for="phone">Телефон:</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <label for="address">Адрес:</label>
+      <input type="text" id="address" name="address" required>
+
+      <input type="radio" id="delivery-time-now" name="delivery-time" value="now" required>
+      <label for="delivery-time-now">Доставить сейчас</label>
+
+      <input type="radio" id="delivery-time-later" name="delivery-time" value="later" required>
+      <label for="delivery-time-later">Доставить позже:</label>
+      <input type="time" id="delivery-time-input" name="delivery-time-input" min="07:00" max="23:00" step="300" required>
+
+      <button type="reset">Сбросить</button>
+      <button type="submit">Отправить</button>
+    </div>
+  </form>
+</section>
+
+
 <footer id="footer">
   <p>Контакты: <a href="mailto:info@businesslunch.ru">info@businesslunch.ru</a>, Телефон: <a href="tel:+71234567890">+7 (123) 456-78-90</a></p>
 </footer>
