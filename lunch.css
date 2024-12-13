@@ -1,172 +1,196 @@
-/* Основные стили */
 body {
-    margin: 0;
-    padding: 0;
-    font-size: 16px;
-    color: #333;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #ffe6f2;
 }
 
-header {
-    background-color: #f8f9fa;
-    padding: 20px;
-    text-align: center;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 24px;
-}
-
-nav {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-nav a {
-    text-decoration: none;
-    color: #007bff;
-    font-size: 18px;
-}
-
-nav a:hover {
-    color: tomato;
-}
-
-nav a.active {
-    color: tomato;
-}
-
-.auth-buttons {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
-
-.auth-buttons button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin-left: 10px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.auth-buttons button:hover {
-    background-color: #0056b3;
-}
-
-main {
-    padding: 20px;
-}
-
-section {
-    margin-bottom: 40px;
-}
-
-section h2 {
-    font-size: 22px;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.dishes-grid {
+.meals-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
 }
 
-.dish-card {
-    display: flex;
-    flex-direction: column;
+.meal-item {
+    background-color: white;
     padding: 30px 40px;
     border-radius: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    filter: drop-shadow(17px 19px 24px rgb(255, 182, 193));
     cursor: pointer;
-    background-color: white;
-    filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
+    transition: border 0.3s, background-color 0.3s;
 }
 
-.dish-card:hover {
-    border: 2px solid tomato;
-}
-
-.dish-card:hover .add-button {
-    background-color: tomato;
-}
-
-.dish-card img {
+.meal-item img {
     width: 100%;
+    height: auto;
     border-radius: 35px;
 }
 
-.dish-price {
-    font-size: 18px;
+.meal-item p {
+    margin: 10px 0;
 }
 
-.dish-name {
-    font-size: 18px;
+.meal-name {
+    font-size: 1.2em;
 }
 
-.dish-weight {
-    color: gray;
+.meal-price {
+    font-size: 1.5em;
 }
 
-.add-button {
-    background-color: #f1eee9;
+.meal-weight {
+    color: pink;
+}
+
+.meal-item button {
     margin-top: auto;
     padding: 10px 30px;
-    border-radius: 10px;
-    cursor: pointer;
+    background-color: white;
     border: none;
+    border-radius: 35px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-footer {
-    background-color: black;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    position: relative;
-    bottom: 0;
+.meal-item:hover {
+    border: 2px solid rgb(255, 182, 193);
+}
+
+.meal-item:hover button {
+    background-color: rgb(255, 182, 193);
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.order-section,
+.customer-section {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid rgb(255, 182, 193);
+    background-color: white;
+}
+
+legend {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#order-summary h3 {
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+#order-summary p {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.total-cost {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+label.inline-label {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+small {
+    font-size: 12px;
+    color: deeppink;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="time"],
+textarea,
+select {
     width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid rgb(255, 182, 193);
+    border-radius: 35px;
+    box-sizing: border-box;
 }
 
-footer p {
-    margin: 0;
-    font-size: 16px;
+.form-buttons {
+    margin-top: 20px;
+    text-align: left;
 }
 
-footer a {
-    color: #007bff;
-    text-decoration: none;
+button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: white;
+    color: deeppink;
+    border: 2px solid rgb(255, 182, 193);
+    border-radius: 35px;
+    cursor: pointer;
 }
 
-footer a:hover {
-    color: #0056b3;
+button[type="reset"]:hover {
+    background-color: deeppink;
+    color: white;
 }
 
-/* Адаптивность */
-@media (max-width: 800px) {
-    nav {
-        justify-content: space-between;
+button[type="submit"]:hover {
+    background-color: rgb(255, 182, 193);
+    color: white;
+}
+
+.filters button {
+    background-color: white;
+    color: deeppink;
+    border: 1px solid rgb(255, 182, 193);
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.filters button.active {
+    background-color: rgb(255, 182, 193);
+    color: white;
+}
+
+@media (min-width: 600px) and (max-width: 799px) {
+    .meals-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
-}
-
-@media (max-width: 600px) {
-    nav {
-        flex-direction: column;
-        align-items: center;
+    h1 {
+        text-align: center;
     }
-
-    nav a {
-        font-size: 22px;
-    }
-
     section h2 {
         text-align: center;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 599px) {
+    .meals-grid {
+        grid-template-columns: 1fr;
+    }
+    h1,
+    section h2 {
+        text-align: center;
+    }
+    .form-container {
+        flex-direction: column;
+    }
+    .order-section,
+    .customer-section {
+        width: 100%;
+        padding: 10px;
     }
 }
