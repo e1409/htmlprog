@@ -18,7 +18,7 @@ body {
     align-items: center;
     filter: drop-shadow(17px 19px 24px rgb(255, 182, 193));
     cursor: pointer;
-    transition: border 0.3s, background-color 0.3s;
+    transition: border 0.3s, background-color
 }
 
 .meal-item img {
@@ -165,6 +165,81 @@ button[type="submit"]:hover {
     color: white;
 }
 
+.lunch-combo {
+    text-align: center;
+    padding: 20px;
+}
+
+.lunch-combo-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.combo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center;
+}
+
+.combo-item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 90%;
+    border: 1px solid rgb(255, 182, 193);
+    border-radius: 35px;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgb(255, 182, 193);
+    text-align: center;
+}
+
+.combo-item .dish {
+    margin: 5px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70px;
+}
+
+.dish-img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
+    transition: transform 0.3s ease;
+}
+
+.dish-img:hover {
+    transform: translateY(-5px) scale(1.1);
+}
+
+.dessert-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.dessert-item .dish {
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dessert-item .dessert-note {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #ff99cc;
+    text-align: center;
+}
+
 @media (min-width: 600px) and (max-width: 799px) {
     .meals-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -174,6 +249,36 @@ button[type="submit"]:hover {
     }
     section h2 {
         text-align: center;
+    }
+}
+
+@media (min-width: 800px) {
+    .meals-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .combo-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    h1 {
+        text-align: center;
+    }
+    .dessert-item .dessert-note {
+        white-space: nowrap;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 799px){
+    .meals-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .combo-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    h1 {
+        text-align: center;
+    }
+    .dessert-item .dessert-note {
+        white-space: none;
     }
 }
 
