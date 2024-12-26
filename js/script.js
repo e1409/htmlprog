@@ -1,6 +1,8 @@
+import { meals, loadDishes } from "./meals.js";
+
 let order = {
     soup: null,
-    main: null,
+    main_course: null,
     drink: null,
     salad: null,
     dessert: null,
@@ -19,20 +21,17 @@ function updateOrderDisplay() {
     let isOrderEmpty = true;
 
     for (const [category, meal] of Object.entries(order)) {
-        const categoryTitle = document.createElement("h3");
-        categoryTitle.textContent = getCategoryTitle(category);
-        orderSummary.appendChild(categoryTitle);
-
         if (meal) {
+            const categoryTitle = document.createElement("h3");
+            categoryTitle.textContent = getCategoryTitle(category);
+            orderSummary.appendChild(categoryTitle);
+
             const mealInfo = document.createElement("p");
             mealInfo.textContent = `${meal.name} ${meal.price}₽`;
             orderSummary.appendChild(mealInfo);
+
             totalCost += meal.price;
             isOrderEmpty = false;
-        } else {
-            const message = document.createElement("p");
-            message.textContent = category === 'drink' ? "Напиток не выбран" : "Блюдо не выбрано";
-            orderSummary.appendChild(message);
         }
     }
 
@@ -52,7 +51,7 @@ function getCategoryTitle(category) {
     switch (category) {
         case "soup":
             return "Суп";
-        case "main":
+        case "main_course":
             return "Главное блюдо";
         case "drink":
             return "Напиток";
@@ -65,10 +64,11 @@ function getCategoryTitle(category) {
     }
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
+    await loadDishes();
     const categories = {
         soup: document.getElementById("soup-grid"),
-        main: document.getElementById("main-grid"),
+        main_course: document.getElementById("main_course-grid"),
         salad: document.getElementById("salad-grid"),
         drink: document.getElementById("drink-grid"),
         dessert: document.getElementById("dessert-grid"),
