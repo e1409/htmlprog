@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
         button.textContent = "Окей";
         button.style.marginTop = "10px";
         button.style.padding = "10px 20px";
-        button.style.backgroundColor = "#f5c6cb";
+        button.style.backgroundColor = "#fff";
         button.style.color = "#ff66b2";
         button.style.border = "none";
         button.style.borderRadius = "5px";
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
             button.style.color = "#fff";
         });
         button.addEventListener("mouseout", () => {
-            button.style.backgroundColor = "#f5c6cb";
+            button.style.backgroundColor = "#fff";
             button.style.color = "#ff66b2";
         });
 
